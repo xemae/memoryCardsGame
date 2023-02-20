@@ -17,46 +17,85 @@ import img15 from '../images/15.webp'
 import img16 from '../images/16.jpeg'
 import img17 from '../images/17.webp'
 import img18 from '../images/18.webp'
+import cards from "../Cards";
 
 
 
 const toolkitSlice = createSlice({
     name: 'toolkit',
     initialState: {
-        time: null,
-        currentCard: {},
+        time: 0,
+        currentCard: null,
+        comparedCard: null,
         cards: [],
         cardsArr1: [
-            img1, img2, img3, img4, img5, img6, img7, img8, img9,
-            img10, img11, img12, img13, img14, img15,img16, img17, img18
+            {
+                isShowed: false,
+                image: img1,
+            },
+            {
+                isShowed: false,
+                image: img2,
+            },
+            {
+                isShowed: false,
+                image: img3,
+            },
+
+            // img2,
+            // img3, img4, img5, img6, img7, img8, img9,
+            // img10, img11, img12, img13, img14, img15,img16, img17, img18
         ],
         cardsArr2: [
-            img1, img2, img3, img4, img5, img6, img7, img8, img9,
-            img10, img11, img12, img13, img14, img15,img16, img17, img18
+            {
+                isShowed: false,
+                image: img1,
+            },
+            {
+                isShowed: false,
+                image: img2,
+            },
+            {
+                isShowed: false,
+                image: img3,
+            },
+            // img1, img2, img3,
+            // img4, img5, img6, img7, img8, img9,
+            // img10, img11, img12, img13, img14, img15,img16, img17, img18
         ],
 
     },
     reducers: {
+        // timer(state) {
+        //     // function addSec () {
+        //     //     function add (n) {n++}
+        //     //     return add(state.time)
+        //     function addSec () {state.time++}
+        //
+        //     setTimeout(addSec, 1000)
+        //     // console.log(current(state.time))
+        // },
         start(state) {
-            function shuffle(array) {
-                for (let i = array.length - 1; i > 0; i--) {
-                    let j = Math.floor(Math.random() * (i + 1)); // случайный индекс от 0 до i
-                    return [array[i], array[j]] = [array[j], array[i]];
-                }
-            }
-            state.cards.push(state.cardsArr1, state.cardsArr2)
-            state.cards = shuffle(state.cards)
-            console.log(state.cards)
-            }
+            state.cards.push(...state.cardsArr1, ...state.cardsArr2)
+            state.cards.sort(() => Math.random()-0.5)
 
+                // while (state.cards) {
+                // setTimeout(function () {
+                //         state.time++
+                //     }, 1000
+                // )
+                // }
 
-    },
-        showCard(state, action) {
 
         },
+        showCard(state, action) {
+            const item = state.cards.find(i => i.image === action.image)
+            const newItem = {...item, isShowed:true}
+            cards.item = newItem
+            console.log(current(cards))
+        }
 
-
-    // }
+    },
 })
 
 export default toolkitSlice.reducer
