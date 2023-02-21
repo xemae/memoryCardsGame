@@ -24,6 +24,7 @@ import cards from "../Cards";
 const toolkitSlice = createSlice({
     name: 'toolkit',
     initialState: {
+        game: false,
         time: 0,
         currentCard: null,
         comparedCard: null,
@@ -78,13 +79,17 @@ const toolkitSlice = createSlice({
         start(state) {
             state.cards.push(...state.cardsArr1, ...state.cardsArr2)
             state.cards.sort(() => Math.random()-0.5)
-
+            state.game = true
                 // while (state.cards) {
                 // setTimeout(function () {
                 //         state.time++
                 //     }, 1000
                 // )
                 // }
+            while (state.game  ) {
+                state.time++
+            }
+            console.log(state.game)
 
 
         },
