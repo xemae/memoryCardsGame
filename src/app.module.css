@@ -1,5 +1,4 @@
 .container {
-
 }
 
 .timer {
@@ -20,6 +19,22 @@
     margin-right: auto;
 }
 
+.start {
+    border: white 2px solid;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.02);
+    font-size: 40px;
+    padding: 5px 20px;
+    color: rgba(240, 248, 255, 0.81);
+    transition: all 0.3s;
+}
+
+.start:hover {
+    border: #3b3f3f 2px solid;
+    background-color: rgba(255, 255, 255, 0.27);
+    color: #3b3f3f;
+}
+
 .cards {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -29,28 +44,23 @@
     width: 600px;
     height: 600px;
     padding: 20px;
+    position: relative
 }
 
-.start {
-    border: white 2px solid;
-    border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.02);
-    font-size: 40px;
-    padding: 5px 20px;
-    color: rgba(240, 248, 255, 0.81);
 
+.cardsCover {
+    /*position: absolute;*/
+    /*z-index: 10;*/
 }
 
-.start:hover {
-    border: #3b3f3f 2px solid;
-    background-color: rgba(255, 255, 255, 0.27);
-    color: #3b3f3f;
-    transition: all 0.3s;
-
+.cover {
+    /*background-color: #af3f3f;*/
+    width: 100px;
+    z-index: 100;
 }
 
-.start :active {
-
+.cardCover {
+    background-color: #af3f3f;
 }
 
 .card {
@@ -64,9 +74,8 @@
     height: 70px;
 }
 
-.card :hover{
+.card :hover {
     /*background-color: navajowhite;*/
-
 }
 
 .card img {

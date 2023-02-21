@@ -1,28 +1,21 @@
-import React from "react";
+import React, {useState} from "react";
 import s from './app.module.css'
 import {useDispatch, useSelector} from "react-redux";
-import {showCard} from "./redux-toolkit/toolkitSlice";
 
-
-const Cards = (props) => {
-
-    // const [cardShowed, setCardShowed] = useState(false)
-    const dispatch = useDispatch()
+const Cards = () => {
     const cards = useSelector(state => state.toolkit.cards)
-    function finder (item, image) {
-        cards.find(item.image === image)
 
-    }
-
-    const Items = props.cards.map(i => {
-
+    const Items = cards.map(i => {
         return <div
-            className={!i.isShowed ? s.card : s.open}
-            key={Math.random()}
-            // onClick={() => setCardShowed(true)}
-            onClick={() => dispatch(showCard(i))}
-        ><img src={i.image}/></div>
-    })
+            className={s.card}
+            // key={Math.random()}
+            key={i.toString()}
+            // onClick={() => dispatch(showCard())}
+        >
+            <img src={i}/>
+        </div>
+    }
+    )
 
     return Items
 }
