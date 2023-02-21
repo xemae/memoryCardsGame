@@ -8,8 +8,8 @@ const Cards = () => {
     const Items = cards.map(i => {
         return <div
             className={s.card}
-            // key={Math.random()}
-            key={i.toString()}
+            key={Math.random()}
+            // key={i.toString()}
             // onClick={() => dispatch(showCard())}
         >
             <img src={i}/>

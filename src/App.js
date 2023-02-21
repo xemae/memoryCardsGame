@@ -66,10 +66,11 @@ function App() {
                     <div>:</div>
                     <div className={s.time}>{setSec()}</div>
                 </div>
-                <div className={s.cards}><Cards /></div>
                 <div className={s.cards + ' ' + s.cardsCover}>
                     <Cover />
                 </div>
+                <div className={s.cards}><Cards/></div>
+
             </div>
         }
     }
