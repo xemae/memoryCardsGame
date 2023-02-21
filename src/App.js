@@ -1,8 +1,8 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import './App.css';
 import s from './app.module.css'
-import {start} from "./redux-toolkit/toolkitSlice";
+import {start, timer} from "./redux-toolkit/toolkitSlice";
 import Cards from "./Cards";
 
 function App() {
@@ -11,21 +11,59 @@ function App() {
     const dispatch = useDispatch()
     const [startButtonShowed, setStartButtonShowed] = useState(true)
 
+
     const StartButton = () => {
-        if (startButtonShowed){
+
+        if (startButtonShowed) {
             return <button className={s.start}
                            onClick={() => dispatch(start())
                                && setStartButtonShowed(false)
-            }>
+                           }>
                 start
-                </button>
+            </button>
         }
     }
 
     const Game = () => {
+        function Timer() {
+            useEffect(
+                () => {
+                    if (cards) {
+                        setTimeout(
+                            () => {
+                                dispatch(timer())
+                            },
+                            1000
+                        )
+                    }
+                }, []
+            )
+        }
+
         if (!startButtonShowed) {
+            Timer()
+
+            function setSec() {
+                if (time[1] < 10) {
+                    return '0' + time[1]
+                } else {
+                    return time[1]
+                }
+            }
+
+            function setMin() {
+                if (time[0] < 10) {
+                    return '0' + time[0]
+                }
+            }
+
             return <div className={s.container}>
-                <div className={s.timer} >{time}</div>
+                <div className={s.timer}>
+                    <div className={s.time}>{setMin()}</div>
+                    <div>:</div>
+                    <div className={s.time}>{setSec()}</div>
+                </div>
+
                 <div className={s.cards}><Cards cards={cards}/></div>
             </div>
         }
@@ -34,8 +72,8 @@ function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Game />
-                <StartButton />
+                <Game/>
+                <StartButton/>
             </header>
         </div>
     );
