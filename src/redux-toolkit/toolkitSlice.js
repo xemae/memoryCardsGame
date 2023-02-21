@@ -24,8 +24,7 @@ import cards from "../Cards";
 const toolkitSlice = createSlice({
     name: 'toolkit',
     initialState: {
-        game: false,
-        time: 0,
+        time: [0, 0],
         currentCard: null,
         comparedCard: null,
         cards: [],
@@ -67,31 +66,16 @@ const toolkitSlice = createSlice({
 
     },
     reducers: {
-        // timer(state) {
-        //     // function addSec () {
-        //     //     function add (n) {n++}
-        //     //     return add(state.time)
-        //     function addSec () {state.time++}
-        //
-        //     setTimeout(addSec, 1000)
-        //     // console.log(current(state.time))
-        // },
+        timer(state) {
+            state.time[1]++
+            if (state.time[1] > 59) {
+                state.time[1] = 0
+                state.time[0]++
+            }
+        },
         start(state) {
             state.cards.push(...state.cardsArr1, ...state.cardsArr2)
             state.cards.sort(() => Math.random()-0.5)
-            state.game = true
-                // while (state.cards) {
-                // setTimeout(function () {
-                //         state.time++
-                //     }, 1000
-                // )
-                // }
-            while (state.game  ) {
-                state.time++
-            }
-            console.log(state.game)
-
-
         },
         showCard(state, action) {
             const item = state.cards.find(i => i.image === action.image)
@@ -99,12 +83,11 @@ const toolkitSlice = createSlice({
             cards.item = newItem
             console.log(current(cards))
         }
-
     },
 })
 
 export default toolkitSlice.reducer
 
 export const {
-    start, showCard
+    start, timer, showCard
 } = toolkitSlice.actions
