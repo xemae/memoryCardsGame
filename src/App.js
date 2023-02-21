@@ -4,6 +4,7 @@ import './App.css';
 import s from './app.module.css'
 import {start, timer} from "./redux-toolkit/toolkitSlice";
 import Cards from "./Cards";
+import Cover from "./Cover";
 
 function App() {
     const cards = useSelector(state => state.toolkit.cards)
@@ -33,7 +34,7 @@ function App() {
                             () => {
                                 dispatch(timer())
                             },
-                            1000
+                            100000
                         )
                     }
                 }, []
@@ -54,6 +55,8 @@ function App() {
             function setMin() {
                 if (time[0] < 10) {
                     return '0' + time[0]
+                } else {
+                    return time[0]
                 }
             }
 
@@ -63,8 +66,10 @@ function App() {
                     <div>:</div>
                     <div className={s.time}>{setSec()}</div>
                 </div>
-
-                <div className={s.cards}><Cards cards={cards}/></div>
+                <div className={s.cards}><Cards /></div>
+                <div className={s.cards + ' ' + s.cardsCover}>
+                    <Cover />
+                </div>
             </div>
         }
     }
