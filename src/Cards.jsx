@@ -8,33 +8,50 @@ const Cards = () => {
     const cards = useSelector(state => state.toolkit.cards)
 
     return cards.map(i => {
-            // eslint-disable-next-line react-hooks/rules-of-hooks
-            // const [cardShowed, setCardShowed] = useState(false)
 
-            function ShowHideCard(i) {
+        function showHideCard(i) {
+                // console.log(cardShowed)
 
-                setTimeout(
+                // setCardShowed(!cardShowed)
+                // console.log(cardShowed)
+
+            dispatch(showCard(i))
+
+                 setTimeout(
                     () => {
+                        // console.log(cardShowed)
+
                         dispatch(showCard(i))
                         // setCardShowed(!cardShowed)
+
                     },
-                    1000
+                    2000
                 )
+                // setCardShowed(!cardShowed)
             }
 
-            return <div
-                className={s.card}
-                key={Math.random()}
-                // key={i.toString()}
-                onClick={() => dispatch(showCard(i))
-                    && ShowHideCard(i)}
-                // style={{
-                //     transition: "all 0.3s",
-                //     backgroundColor: cardShowed ? 'white' : 'none',
-                // }}
-            >
-                <img src={i.image}/>
-            </div>
+            if (!i.isShowed) {
+                return <div
+                    key={Math.random()}
+                    onClick={ () => showHideCard(i)}>fff</div>
+            }
+
+                return <div
+                    className={s.card}
+                    key={Math.random()}
+                    // onClick={() => dispatch(showCard(i))
+                    //     && showHideCard(i)}
+                    // style={{
+                    // transition: "all 0.3s",
+                    // backgroundColor: cardShowed ? 'white' : 'none',
+                    // visibility: cardShowed? 'visible' : 'hidden',
+                    // height: !cardShowed ? '100px' : '50px'
+                    // }}
+                >
+                    <img src={i.image}/>
+                </div>
+
+
         }
     )
 }

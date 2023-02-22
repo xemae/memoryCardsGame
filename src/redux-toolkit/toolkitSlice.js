@@ -28,6 +28,7 @@ const toolkitSlice = createSlice({
         currentCard: null,
         comparedCard: null,
         cards: [],
+        showedItems: [],
         cardsArr1: [
             {
                 id: 1,
@@ -84,11 +85,23 @@ const toolkitSlice = createSlice({
             state.cards.sort(() => Math.random()-0.5)
         },
         showCard(state, action) {
+            // console.log(action.payload)
+            let item = state.cards.find(i => i.id === action.payload.id)
 
-            state.cards.find(i => i.id === action.payload.id).isShowed =
-                !state.cards.find(i => i.id === action.payload.id).isShowed
+            item.isShowed = !item.isShowed
+            // state.cards.find(i => i.id === action.payload.id).isShowed =
+            //     !state.cards.find(i => i.id === action.payload.id).isShowed
 
-            console.log(current(state.cards))
+            state.showedItems.push(item)
+            state.showedItems[0] === state.showedItems[1]
+                ? state.cards.find(i => i.image === action.payload.image)
+                : state.showedItems.length = 0
+
+
+
+            // console.log(current(state.cards))
+
+
 
         },
     },
