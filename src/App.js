@@ -4,7 +4,6 @@ import './App.css';
 import s from './app.module.css'
 import {start, timer} from "./redux-toolkit/toolkitSlice";
 import Cards from "./Cards";
-import Cover from "./Cover";
 
 function App() {
     const cards = useSelector(state => state.toolkit.cards)
@@ -64,9 +63,9 @@ function App() {
                     <div>:</div>
                     <div className={s.time}>{setSec()}</div>
                 </div>
-                <div className={s.cardsCover}>
-                    <Cover/>
-                </div>
+                {/*<div className={s.cardsCover}>*/}
+                {/*    <Cover/>*/}
+                {/*</div>*/}
                 <div className={s.cards}><Cards/></div>
             </div>
         }

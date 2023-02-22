@@ -29,39 +29,45 @@ const toolkitSlice = createSlice({
         comparedCard: null,
         cards: [],
         cardsArr1: [
-            // {
-            //     isShowed: false,
-            //     image: img1,
-            // },
-            // {
-            //     isShowed: false,
-            //     image: img2,
-            // },
-            // {
-            //     isShowed: false,
-            //     image: img3,
-            // },
+            {
+                id: 1,
+                isShowed: false,
+                image: img1,
+            },
+            {
+                id: 2,
+                isShowed: false,
+                image: img2,
+            },
+            {
+                id: 3,
+                isShowed: false,
+                image: img3,
+            },
 
-            img1, img2,
-            img3, img4, img5, img6, img7, img8, img9,
-            img10, img11, img12, img13, img14, img15,img16, img17, img18
+            // img1, img2,
+            // img3, img4, img5, img6, img7, img8, img9,
+            // img10, img11, img12, img13, img14, img15,img16, img17, img18
         ],
         cardsArr2: [
-            // {
-            //     isShowed: false,
-            //     image: img1,
-            // },
-            // {
-            //     isShowed: false,
-            //     image: img2,
-            // },
-            // {
-            //     isShowed: false,
-            //     image: img3,
-            // },
-            img1, img2, img3,
-            img4, img5, img6, img7, img8, img9,
-            img10, img11, img12, img13, img14, img15,img16, img17, img18
+            {
+                id: 19,
+                isShowed: false,
+                image: img1,
+            },
+            {
+                id: 20,
+                isShowed: false,
+                image: img2,
+            },
+            {
+                id: 21,
+                isShowed: false,
+                image: img3,
+            },
+            // img1, img2, img3,
+            // img4, img5, img6, img7, img8, img9,
+            // img10, img11, img12, img13, img14, img15,img16, img17, img18
         ],
 
     },
@@ -78,13 +84,13 @@ const toolkitSlice = createSlice({
             state.cards.sort(() => Math.random()-0.5)
         },
         showCard(state, action) {
-            let item = state.cards.find(i => i.image === action.image)
-            // const newItem = {...item, isShowed:true}
-            // item = newItem
-            item.isShowed = true
+
+            state.cards.find(i => i.id === action.payload.id).isShowed =
+                !state.cards.find(i => i.id === action.payload.id).isShowed
+
             console.log(current(state.cards))
-            return item
-        }
+
+        },
     },
 })
 
