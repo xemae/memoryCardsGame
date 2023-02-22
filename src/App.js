@@ -12,9 +12,7 @@ function App() {
     const dispatch = useDispatch()
     const [startButtonShowed, setStartButtonShowed] = useState(true)
 
-
     const StartButton = () => {
-
         if (startButtonShowed) {
             return <button className={s.start}
                            onClick={() => dispatch(start())
@@ -66,21 +64,20 @@ function App() {
                     <div>:</div>
                     <div className={s.time}>{setSec()}</div>
                 </div>
-                <div className={s.cards + ' ' + s.cardsCover}>
-                    <Cover />
+                <div className={s.cardsCover}>
+                    <Cover/>
                 </div>
                 <div className={s.cards}><Cards/></div>
-
             </div>
         }
     }
 
     return (
         <div className="App">
-            <header className="App-header">
+            {/*<header className="App-header">*/}
                 <Game/>
                 <StartButton/>
-            </header>
+            {/*</header>*/}
         </div>
     );
 }
