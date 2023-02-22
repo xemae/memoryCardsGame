@@ -13,7 +13,10 @@ const Cover = () => {
             className={s.cover}
             key={Math.random()}
             // id={Math.random().toString()}
-            style={{backgroundColor: coverShowed ? 'white' : '#af3f3f'}}
+            style={{
+                transition: "all 0.3s",
+                backgroundColor: coverShowed ? 'white' : 'none',
+            }}
             onClick={() => setCoverShowed(false)}
         >
             {/*<div onClick={() => setCoverShowed(false)}*/}
