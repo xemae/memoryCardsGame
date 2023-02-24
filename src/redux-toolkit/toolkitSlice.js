@@ -246,6 +246,11 @@ const toolkitSlice = createSlice({
             let item = state.cards.find(i => i.id === action.payload.id)
             item.isShowed = !item.isShowed
             state.showedItems.filter(i => i.isShowed === true)
+        },
+        hiderCard(state, action) {
+            let item = state.cards.find(i => i.id === action.payload.id)
+            item.isShowed = !item.isShowed
+            state.showedItems.filter(i => i.isShowed === true)
         }
     },
 })
