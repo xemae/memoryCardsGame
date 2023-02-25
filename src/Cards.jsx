@@ -9,7 +9,10 @@ const Cards = () => {
 
     return cards.map(i => {
             function showHideCard(i) {
-                dispatch(showCard(i))
+                // if (cards.filter(n => n.isShowed === true).length < 2) {
+                    dispatch(showCard(i))
+                // }
+
 
                 setTimeout(
                     () => {

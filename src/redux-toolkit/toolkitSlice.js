@@ -228,24 +228,33 @@ const toolkitSlice = createSlice({
         },
         showCard(state, action) {
             // console.log(action.payload)
+            let showedItems = state.cards.filter(i => i.isShowed === true)
+
             let item = state.cards.find(i => i.id === action.payload.id)
-            item.isShowed = !item.isShowed
+            item.isShowed = true
+
             state.showedItems.push(item)
 
-
-            if (state.showedItems.length === 2) {
-                state.showedItems[0].image === state.showedItems[1].image
-                    ? state.cards = state.cards.filter(i => i.image !== action.payload.image)
-                    : state.showedItems.length = 0
+            // if (state.showedItems.length === 2) {
+            //     state.showedItems[0].image === state.showedItems[1].image
+            //         ? state.cards = state.cards.filter(i => i.image !== action.payload.image)
+            //         : state.showedItems.length = 0
+            // }
+            if (
+                showedItems.length === 2
+                // ||
+                // state.showedItems[0].image !== state.showedItems[1].image
+            ) {
+                showedItems.map(i => i.isShowed = false)
             }
 
-            // state.showedItems.filter(i => i.isShowed === true)
-            console.log(current(state.cards))
+            console.log(current(state.showedItems))
         },
         hideCard(state, action) {
             let item = state.cards.find(i => i.id === action.payload.id)
-            item.isShowed = !item.isShowed
+            item.isShowed = false
             state.showedItems.filter(i => i.isShowed === true)
+
         },
 
     },
