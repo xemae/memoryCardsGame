@@ -227,7 +227,6 @@ const toolkitSlice = createSlice({
             state.cards.sort(() => Math.random() - 0.5)
         },
         showCard(state, action) {
-            // console.log(action.payload)
             let showedItems = state.cards.filter(i => i.isShowed === true)
 
             let item = state.cards.find(i => i.id === action.payload.id)
@@ -235,16 +234,14 @@ const toolkitSlice = createSlice({
 
             state.showedItems.push(item)
 
-            // if (state.showedItems.length === 2) {
-            //     state.showedItems[0].image === state.showedItems[1].image
-            //         ? state.cards = state.cards.filter(i => i.image !== action.payload.image)
-            //         : state.showedItems.length = 0
+            // if (showedItems[0].image == action.payload.image) {
+            //     state.cards = state.cards.find(
+            //         i => i.image !== showedItems[0].image
+            //     )
             // }
-            if (
-                showedItems.length === 2
-                // ||
-                // state.showedItems[0].image !== state.showedItems[1].image
-            ) {
+            // if (showedItems[0].image === action.payload.image)
+
+            if (showedItems.length === 2) {
                 showedItems.map(i => i.isShowed = false)
                 state.showedItems.length = 0
             }
@@ -255,6 +252,7 @@ const toolkitSlice = createSlice({
             let item = state.cards.find(i => i.id === action.payload.id)
             item.isShowed = false
             state.showedItems.filter(i => i.isShowed === true)
+            state.showedItems.length = 0
 
         },
 
