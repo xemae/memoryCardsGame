@@ -231,24 +231,31 @@ const toolkitSlice = createSlice({
             item.isShowed = true
             state.showedItems.push(item)
             let showedItemsCount = state.showedItems.length
-            if (showedItemsCount === 2) {
-                if (state.showedItems[0].image === state.showedItems[1].image){
-                    state.cards = state.cards.filter(
-                        i => (i.image !== (state.showedItems[0].image
-                            || state.showedItems[1].image))
-                    )
-                    showedItemsCount = 0
-                }
+            // if (showedItemsCount === 2) {
+            //     if (state.showedItems[0].image === state.showedItems[1].image){
+            //         state.cards = state.cards.filter(
+            //             i => (i.image !== (state.showedItems[0].image
+            //                 || state.showedItems[1].image))
+            //         )
+            //     }
+            // }
+            console.log(current(state.cards))
 
-            }
-
-            console.log(current(state.showedItems))
 
         },
-        hideCard(state, action) {
-            let item = state.cards.find(i => i.id === action.payload.id)
-            state.showedItems.length = 0
-            item.isShowed = false
+        hideCard(state) {
+            // let item = state.cards.find(i => i.id === action.payload.id)
+            if (
+                // state.showedItems.length < 3
+                // &&
+                state.showedItems.length > 0
+            ) {
+                state.showedItems.length = 0
+                //строчка ниже правильная
+                state.cards.map(i => i.isShowed = false)
+            }
+            // item.isShowed = false
+
         },
     },
 })
