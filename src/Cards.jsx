@@ -7,20 +7,28 @@ const Cards = () => {
     const dispatch = useDispatch()
     const cards = useSelector(state => state.toolkit.cards)
     const showedCards = useSelector(state => state.toolkit.showedItems)
+    // useEffect( () => {
+    //
+    // }, [showedCards]
 
+    // )
     return cards.map(i => {
 
-            setTimeout(
-                () => {
-                        showedCards.forEach(el => dispatch(hideCard(el)))
-                },
-                2000
-            )
+            if (showedCards.length < 3 && showedCards.length > 0) {
+                setTimeout(
+                    () => {
+                        // showedCards.map(el => dispatch(hideCard()))
+                        dispatch(hideCard(i))
+                    },
+                    2000
+                )
+            }
+
 
             if (!i.isShowed) {
                 return <div className={s.cardCover}
-                    key={Math.random()}
-                    onClick={() => dispatch(showCard(i))}
+                            key={Math.random()}
+                            onClick={() => dispatch(showCard(i))}
                 >
                 </div>
             }
