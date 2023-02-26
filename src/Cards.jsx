@@ -12,11 +12,9 @@ const Cards = () => {
 
             setTimeout(
                 () => {
-                    if (showedCards.length < 3) {
                         showedCards.forEach(el => dispatch(hideCard(el)))
-                    }
                 },
-                3000
+                2000
             )
 
             if (!i.isShowed) {
