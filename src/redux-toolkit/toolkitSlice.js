@@ -246,6 +246,7 @@ const toolkitSlice = createSlice({
                 // state.showedItems[0].image !== state.showedItems[1].image
             ) {
                 showedItems.map(i => i.isShowed = false)
+                state.showedItems.length = 0
             }
 
             console.log(current(state.showedItems))
