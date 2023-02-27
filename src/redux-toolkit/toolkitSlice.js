@@ -231,14 +231,19 @@ const toolkitSlice = createSlice({
             item.isShowed = true
             state.showedItems.push(item)
             let showedItemsCount = state.showedItems.length
-            // if (showedItemsCount === 2) {
-            //     if (state.showedItems[0].image === state.showedItems[1].image){
-            //         state.cards = state.cards.filter(
-            //             i => (i.image !== (state.showedItems[0].image
-            //                 || state.showedItems[1].image))
-            //         )
-            //     }
-            // }
+            if (showedItemsCount === 2) {
+                if (state.showedItems[0].image === state.showedItems[1].image){
+                    let cards = state.cards.filter(
+                        i => (i.image === (state.showedItems[0].image
+                            || state.showedItems[1].image))
+                    )
+                    cards.map(i => i.image = undefined)
+                    // state.cards = state.cards.filter(
+                    //     i => (i.image !== (state.showedItems[0].image
+                    //                 || state.showedItems[1].image))
+                    // )
+                }
+            }
             console.log(current(state.cards))
 
 

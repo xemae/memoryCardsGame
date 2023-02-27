@@ -24,6 +24,12 @@ const Cards = () => {
                 )
             }
 
+            if (!i.isShowed && !i.image) {
+                return <div className={s.noCard}
+                            key={Math.random()}
+                >
+                </div>
+            }
 
             if (!i.isShowed) {
                 return <div className={s.cardCover}
@@ -32,6 +38,7 @@ const Cards = () => {
                 >
                 </div>
             }
+
 
             return <div
                 className={s.card}
