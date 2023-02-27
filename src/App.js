@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import './App.css';
 import s from './app.module.css'
+import b from './background.module.css'
 import {showCard, start, timer} from "./redux-toolkit/toolkitSlice";
 import Cards from "./Cards";
 import Timer from "./Timer";
@@ -31,10 +32,19 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <div className= 'body'>
             <Timer startButtonShowed={startButtonShowed}/>
             <Game/>
             <StartButton/>
+            <div className={b.light + " " + b.x1}></div>
+            <div className={b.light + " " + b.x2}></div>
+            <div className={b.light + " " + b.x3}></div>
+            <div className={b.light + " " + b.x4}></div>
+            <div className={b.light + " " + b.x5}></div>
+            <div className={b.light + " " + b.x6}></div>
+            <div className={b.light + " " + b.x7}></div>
+            <div className={b.light + " " + b.x8}></div>
+            <div className={b.light + " " + b.x9}></div>
         </div>
     );
 }
