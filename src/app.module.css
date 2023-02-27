@@ -1,4 +1,5 @@
 .container {
+    z-index:1000 ;
 }
 
 .timer {
@@ -7,7 +8,8 @@
     font-size: 36px;
     font-weight: bold;
     width: 110px;
-    margin: auto auto 20px;
+    margin: 20px auto;
+    color: white;
 }
 
 .time {
@@ -15,24 +17,37 @@
 }
 
 .timer div {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
 }
 
 .start {
     border: white 2px solid;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.02);
     font-size: 40px;
-    padding: 5px 20px;
-    color: rgba(240, 248, 255, 0.81);
+    color: white;
     transition: all 0.3s;
+    position: absolute;
+    background-color: rgba(59, 63, 63, 0.42);
+    width: 250px;
+    height: 50px;
+    opacity: .5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
 
 .start:hover {
     border: #3b3f3f 2px solid;
     background-color: rgba(255, 255, 255, 0.27);
     color: #3b3f3f;
+    opacity: .8;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.start:focus {
+    outline: none;
 }
 
 .cardsCover {
@@ -56,20 +71,25 @@
     height: 600px;
     padding: 20px;
     position: relative;
+    margin: auto;
 }
 
 .cardCover {
     background-color: #f3f3f3;
-    width: 95px;
-    height: 95px;
-    border-radius: 5px;
+    /*width: 95px;*/
+    /*height: 95px;*/
+    /*border-radius: 5px;*/
     transition: all 0.2s;
     outline: 1px solid #c4c4c4;
     outline-offset: -4px;
 }
 
 .cardCover:hover{
-    background-color: #f5e0b7;
+    background-color: #c7e1da;
+}
+
+.disabledCover {
+pointer-events: none;
 }
 
 .card {
@@ -83,7 +103,11 @@
     width: 95px;
     height: 95px;
 }
+
+.card img.none {
+    display: none;
+}
+
 .noCard {
     background-color: rgba(245, 224, 183, 0);
-
 }
