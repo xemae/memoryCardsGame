@@ -96,18 +96,43 @@ pointer-events: none;
     width: 95px;
     height: 95px;
     border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.2s;
+    outline-offset: -4px;
+    background-color: transparent;
+    outline: 1px solid transparent;
 }
 
-.card img {
-    border-radius: 5px;
-    width: 95px;
-    height: 95px;
+.card.default {
+    background-color: #f3f3f3;
+    outline: 1px solid #c4c4c4;
+    cursor: pointer;
 }
 
-.card img.none {
-    display: none;
+.image {
+    width: 100%;
+    height: 100%;
+    transition: opacity .2s;
 }
 
-.noCard {
-    background-color: rgba(245, 224, 183, 0);
+.image.none {
+    opacity: 0;
 }
+
+/*.card.hiddenOutline {*/
+/*    */
+/*}*/
+
+/*.card img {*/
+/*    border-radius: 5px;*/
+/*    width: 95px;*/
+/*    height: 95px;*/
+/*}*/
+
+/*.card img.none {*/
+/*    display: none;*/
+/*}*/
+
+/*.noCard {*/
+/*    background-color: rgba(245, 224, 183, 0);*/
+/*}*/

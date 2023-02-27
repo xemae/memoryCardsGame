@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
+import React, {useState} from "react";
+import {useDispatch} from "react-redux";
 import './App.css';
 import s from './app.module.css'
 import b from './background.module.css'
-import {showCard, start, timer} from "./redux-toolkit/toolkitSlice";
+import {start} from "./redux-toolkit/toolkitSlice";
 import Cards from "./Cards";
 import Timer from "./Timer";
 
@@ -25,14 +25,16 @@ function App() {
 
     const Game = () => {
         if (!startButtonShowed) {
-            return <div className={s.cards}>
-                <Cards/>
-            </div>
+            return (
+                <div className={s.cards}>
+                    <Cards/>
+                </div>
+            )
         }
     }
 
     return (
-        <div className= 'body'>
+        <div className='body'>
             <Timer startButtonShowed={startButtonShowed}/>
             <Game/>
             <StartButton/>

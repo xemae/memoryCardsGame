@@ -1,45 +1,42 @@
 import {hideCard, showCard} from "./redux-toolkit/toolkitSlice";
 import s from "./app.module.css";
-import React, {useCallback} from "react";
+import React, {useCallback, useEffect, useMemo, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import classNames from "classnames";
 
 const Card = (props) => {
+
     const dispatch = useDispatch()
     const showedItemsIds = useSelector(state => state.toolkit.showedItemsIds)
+    const removedItemIds = useSelector(state => state.toolkit.removedItemIds)
     const {card} = props
 
-    if (showedItemsIds.length < 3 && showedItemsIds.length > 0) {
-        setTimeout(
-            () => {
-                dispatch(hideCard(card))
-            },
-            2000
-        )
-    }
+    const isShowed = useMemo(() => Boolean(showedItemsIds.find(item => item.id === card.id)), [showedItemsIds, card])
+    const isRemoved = useMemo(() => Boolean(removedItemIds.find(id => id === card.id)), [removedItemIds, card])
 
-    const cardClick = () => {
-        if (!card.isShowed) {
-            dispatch(showCard(card.id))
+    const cardClick = useCallback(() => {
+        if (!isShowed && !isRemoved) {
+            dispatch(showCard({id: card.id, pairId: card.pairId}))
         }
-    }
+    }, [isShowed, isRemoved, card])
 
-    return <div
-        // className={s.card}
-        className={classNames(
-            s.card,
-            {[s.noCard]: !card.isShowed && !card.image},
-            {[s.cardCover]: !card.isShowed}
-        )}
-        onClick={cardClick}
-    >
-        <img
-            src={card.image}
+    return (
+        <div
             className={classNames(
-                {[s.none]: !card.isShowed}
+                s.card,
+                {[s.default]: !isShowed && !isRemoved}
             )}
-        />
-    </div>
+            onClick={cardClick}
+        >
+            <img
+                src={card.image}
+                className={classNames(
+                    s.image,
+                    {[s.none]: !isShowed || isRemoved}
+                )}
+            />
+        </div>
+    )
 }
 
 export default Card
