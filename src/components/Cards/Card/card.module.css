@@ -1,0 +1,42 @@
+
+.cardCover {
+    background-color: #f3f3f3;
+    transition: all 0.2s;
+    outline: 1px solid #c4c4c4;
+    outline-offset: -4px;
+}
+
+.cardCover:hover {
+    background-color: #c7e1da;
+}
+
+.disabledCover {
+    pointer-events: none;
+}
+
+.card {
+    width: 95px;
+    height: 95px;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: all 0.2s;
+    outline-offset: -4px;
+    background-color: transparent;
+    outline: 1px solid transparent;
+}
+
+.card.default {
+    background-color: #f3f3f3;
+    outline: 1px solid #c4c4c4;
+    cursor: pointer;
+}
+
+.image {
+    width: 100%;
+    height: 100%;
+    transition: opacity .2s;
+}
+
+.image.none {
+    opacity: 0;
+}

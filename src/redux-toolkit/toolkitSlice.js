@@ -230,11 +230,19 @@ const toolkitSlice = createSlice({
                     }
                 }
             }
+            if (state.cards.length === state.removedItemIds.length) {
+                state.gameOn = false
+            }
         },
         hideCard(state) {
             state.showedItemsIds = []
             state.attempts++
         },
+        // endGame(state) {
+        //     if (state.cards.length === state.removedItemIds.length) {
+        //         state.gameOn = false
+        //     }
+        // }
     },
 })
 

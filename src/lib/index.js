@@ -1,0 +1,1 @@
+export {getStringTimeBySeconds} from './getStringTimeBySeconds'

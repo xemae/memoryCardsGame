@@ -1,7 +1,7 @@
 import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import Card from "./Card";
-import {hideCard} from "./redux-toolkit/toolkitSlice";
+import Card from "./Card/Card";
+import {hideCard} from "../../redux-toolkit/toolkitSlice";
 
 const timeOutSingle = 4000
 const timeOutFail = 1000
