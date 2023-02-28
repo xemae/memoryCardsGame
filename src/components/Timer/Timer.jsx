@@ -1,12 +1,12 @@
-import s from "./app.module.css";
+import s from "./Timer.module.css";
 import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
-import {getStringTimeBySeconds} from "./lib";
-import Win from "./Win";
+import {getStringTimeBySeconds} from "../../lib";
+import Win from "../Win/Win";
 
 const Timer = () => {
     const {gameOn} = useSelector(state => state.toolkit)
-    const [timeCount, setTimeCount] = useState(58)
+    const [timeCount, setTimeCount] = useState(0)
     const [timeOutId, setTimeOutId] = useState(0)
 
     useEffect(
@@ -26,14 +26,14 @@ const Timer = () => {
     )
 
     if (!gameOn) {
-        return             <Win timeCount={getStringTimeBySeconds(timeCount)}/>
+        return (
+            <Win timeCount={getStringTimeBySeconds(timeCount)}/>
+        )
     }
 
-    return <div className={s.container}>
-        <div className={s.timer}>
+    return <div className={s.timer}>
             {getStringTimeBySeconds(timeCount)}
         </div>
-    </div>
 }
 
 export default Timer

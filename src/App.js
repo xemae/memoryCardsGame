@@ -2,23 +2,20 @@ import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import './App.css';
 import s from './app.module.css'
-import b from './components/Background/background.module.css'
+import b from './background.module.css'
 import {start} from "./redux-toolkit/toolkitSlice";
 import Cards from "./components/Cards/Cards";
-import Timer from "./Timer";
-import Win from "./Win";
+import Timer from "./components/Timer/Timer";
 
 function App() {
-    const gameOn = useSelector(state => state.toolkit.gameOn)
+    const {gameOn, removedItemIds} = useSelector(state => state.toolkit)
     const dispatch = useDispatch()
-    // const [startButtonShowed, setStartButtonShowed] = useState(true)
 
     const StartButton = () => {
-        if (!gameOn) {
+        if (!gameOn && removedItemIds.length === 0) {
             return <button className={s.start}
                            onClick={
                                () => dispatch(start())
-                                   // && setStartButtonShowed(false)
                            }>
                 start
             </button>

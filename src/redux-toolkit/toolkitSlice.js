@@ -22,11 +22,11 @@ import img18 from '../images/18.webp'
 const toolkitSlice = createSlice({
     name: 'toolkit',
     initialState: {
-        currentCard: null,
-        comparedCard: null,
         gameOn: false,
         attempts: 0,
         successfulAttempts: 0,
+        showedItemsIds: [],
+        removedItemIds: [],
         cards: [
             {
                 id: 1,
@@ -209,12 +209,13 @@ const toolkitSlice = createSlice({
             //     image: img18,
             // },
         ],
-        showedItemsIds: [],
-        removedItemIds: [],
     },
     reducers: {
         start(state) {
-            // state.cards.push(...state.cardsArr1, ...state.cardsArr2)
+            state.attempts = 0
+            state.successfulAttempts = 0
+            state.removedItemIds.length = 0
+            state.showedItemsIds.length = 0
             state.cards.sort(() => Math.random() - 0.5)
             state.gameOn = true
         },
@@ -222,11 +223,10 @@ const toolkitSlice = createSlice({
             if (state.showedItemsIds.length < 2) {
                 state.showedItemsIds.push(action.payload)
                 if (state.showedItemsIds.length === 2) {
-                    // compare pairId
                     if (state.showedItemsIds[0].pairId === state.showedItemsIds[1].pairId) {
                         state.removedItemIds.push(state.showedItemsIds[0].id)
                         state.removedItemIds.push(state.showedItemsIds[1].id)
-                        state.successfulAttempts++
+                        state.successfulAttempts = state.successfulAttempts + 1
                     }
                 }
             }
@@ -236,13 +236,8 @@ const toolkitSlice = createSlice({
         },
         hideCard(state) {
             state.showedItemsIds = []
-            state.attempts++
+            state.attempts = state.attempts + 1
         },
-        // endGame(state) {
-        //     if (state.cards.length === state.removedItemIds.length) {
-        //         state.gameOn = false
-        //     }
-        // }
     },
 })
 
