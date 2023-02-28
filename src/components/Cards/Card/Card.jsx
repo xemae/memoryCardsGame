@@ -1,5 +1,5 @@
 import {showCard} from "../../../redux-toolkit/toolkitSlice";
-import s from "../Card/card.module.css";
+import s from "./Card.module.css";
 import React, {useCallback, useMemo} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import classNames from "classnames";

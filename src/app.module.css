@@ -2,24 +2,6 @@
     z-index: 1000;
 }
 
-.timer {
-    /*display: grid;*/
-    /*grid-template-columns: 1fr 1fr 1fr;*/
-    font-size: 36px;
-    font-weight: bold;
-    width: 130px;
-    margin: 20px auto;
-    color: white;
-}
-
-/*.time {*/
-/*    width: 50px;*/
-/*}*/
-
-/*.timer div {*/
-/*    margin: auto;*/
-/*}*/
-
 .start {
     border: white 2px solid;
     border-radius: 8px;
