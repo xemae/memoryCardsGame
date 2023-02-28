@@ -36,7 +36,7 @@ const Cards = () => {
         }
     }, [showedItemsIds])
 
-    return cards.map(card => <Card card={card} key={card.id} />)
+    return cards.map(card => <Card card={card} key={card.id}/>)
 }
 
 export default Cards

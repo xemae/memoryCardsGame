@@ -1,37 +1,47 @@
 import s from "./app.module.css";
-import React from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {timer} from "./redux-toolkit/toolkitSlice";
+import React, {useEffect, useState} from "react";
+import {useSelector} from "react-redux";
 
 const Timer = (props) => {
-    const time = useSelector(state => state.toolkit.time)
-    const dispatch = useDispatch()
+    const {removedItemIds, cards} = useSelector(state => state.toolkit)
+    const [timeCount, setTimeCount] = useState([0, 0])
 
-    React.useEffect(
+    useEffect(
         () => {
-            setInterval(
+            if (props.startButtonShowed === false) {
+
+                const timeOutId = setInterval(
                 () => {
-                    dispatch(timer(props.startButtonShowed))
-                },
-                1000
+                        setTimeCount(prevTimeCount => [prevTimeCount[0], prevTimeCount[1] + 1])
+                }, 1000
             )
-        }, [dispatch, props.startButtonShowed]
+                if (removedItemIds.length === cards.length) {
+                    clearInterval(timeOutId)
+                }
+
+            }
+        }, [props.startButtonShowed]
     )
+
+
+    if (timeCount[1] > 59) {
+        setTimeCount(prevTimeCount => [prevTimeCount[0] + 1, prevTimeCount[1] = 0])
+    }
 
     if (props.startButtonShowed === false) {
         function setSec() {
-            if (time[1] < 10) {
-                return '0' + time[1]
+            if (timeCount[1] < 10) {
+                return '0' + timeCount[1]
             } else {
-                return time[1]
+                return timeCount[1]
             }
         }
 
         function setMin() {
-            if (time[0] < 10) {
-                return '0' + time[0]
+            if (timeCount[0] < 10) {
+                return '0' + timeCount[0]
             } else {
-                return time[0]
+                return timeCount[0]
             }
         }
 

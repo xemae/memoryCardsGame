@@ -6,6 +6,7 @@ import b from './background.module.css'
 import {start} from "./redux-toolkit/toolkitSlice";
 import Cards from "./Cards";
 import Timer from "./Timer";
+import Win from "./Win";
 
 function App() {
     // const time = useSelector(state => state.toolkit.time)
@@ -27,7 +28,8 @@ function App() {
         if (!startButtonShowed) {
             return (
                 <div className={s.cards}>
-                    <Cards/>
+                    <Cards />
+
                 </div>
             )
         }
@@ -35,6 +37,7 @@ function App() {
 
     return (
         <div className='body'>
+            <Win />
             <Timer startButtonShowed={startButtonShowed}/>
             <Game/>
             <StartButton/>
