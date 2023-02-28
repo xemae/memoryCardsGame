@@ -1,23 +1,24 @@
 import React, {useState} from "react";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import './App.css';
 import s from './app.module.css'
-import b from './background.module.css'
+import b from './components/Background/background.module.css'
 import {start} from "./redux-toolkit/toolkitSlice";
-import Cards from "./Cards";
+import Cards from "./components/Cards/Cards";
 import Timer from "./Timer";
 import Win from "./Win";
 
 function App() {
-    // const time = useSelector(state => state.toolkit.time)
+    const gameOn = useSelector(state => state.toolkit.gameOn)
     const dispatch = useDispatch()
-    const [startButtonShowed, setStartButtonShowed] = useState(true)
+    // const [startButtonShowed, setStartButtonShowed] = useState(true)
 
     const StartButton = () => {
-        if (startButtonShowed) {
+        if (!gameOn) {
             return <button className={s.start}
-                           onClick={() => dispatch(start())
-                               && setStartButtonShowed(false)
+                           onClick={
+                               () => dispatch(start())
+                                   // && setStartButtonShowed(false)
                            }>
                 start
             </button>
@@ -25,11 +26,10 @@ function App() {
     }
 
     const Game = () => {
-        if (!startButtonShowed) {
+        if (gameOn) {
             return (
-                <div className={s.cards}>
-                    <Cards />
-
+                <div className={s.cardsContainer}>
+                    <Cards/>
                 </div>
             )
         }
@@ -37,8 +37,7 @@ function App() {
 
     return (
         <div className='body'>
-            <Win />
-            <Timer startButtonShowed={startButtonShowed}/>
+            <Timer/>
             <Game/>
             <StartButton/>
             <div className={b.light + " " + b.x1}></div>
