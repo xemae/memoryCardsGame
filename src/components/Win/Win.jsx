@@ -14,7 +14,7 @@ const Win = (props) => {
 
     const onMenuClick = () => {
         dispatch(setMenu())
-        return <Menu />
+        return <Menu/>
     }
 
     if (removedItemIds.length === cards.length) {
