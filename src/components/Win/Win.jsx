@@ -6,13 +6,6 @@ const Win = (props) => {
     const {timeCount} = props
     const {removedItemIds, cards, attempts, successfulAttempts} = useSelector(state => state.toolkit)
 
-    // console.log(attempts)
-    // console.log(successfulAttempts)
-
-    useEffect(() => {
-        console.log(attempts)
-    }, [attempts])
-
     const badAttempts = attempts - successfulAttempts
     const accuracy = Math.round((successfulAttempts / attempts) * 100)
 

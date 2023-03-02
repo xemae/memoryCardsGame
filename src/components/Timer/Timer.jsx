@@ -32,8 +32,8 @@ const Timer = () => {
     }
 
     return <div className={s.timer}>
-            {getStringTimeBySeconds(timeCount)}
-        </div>
+        {getStringTimeBySeconds(timeCount)}
+    </div>
 }
 
 export default Timer
