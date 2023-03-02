@@ -233,11 +233,14 @@ const toolkitSlice = createSlice({
             if (state.cards.length === state.removedItemIds.length) {
                 state.gameOn = false
             }
+            console.log('removedItemIds ' + state.removedItemIds.length)
+
         },
         hideCard(state) {
             state.showedItemsIds = []
             state.attempts = state.attempts + 1
         },
+
     },
 })
 

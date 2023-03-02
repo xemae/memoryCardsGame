@@ -3,11 +3,12 @@ import s from "./Card.module.css";
 import React, {useCallback, useMemo} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import classNames from "classnames";
+import Win from "../../Win/Win";
 
 const Card = (props) => {
     const {card} = props
     const dispatch = useDispatch()
-    const {showedItemsIds, removedItemIds} = useSelector(state => state.toolkit)
+    const {showedItemsIds, removedItemIds, cards} = useSelector(state => state.toolkit)
 
     const isShowed = useMemo(() =>
         Boolean(showedItemsIds.find(item => item.id === card.id)), [showedItemsIds, card])
