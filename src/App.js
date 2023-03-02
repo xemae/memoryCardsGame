@@ -7,56 +7,24 @@ import {start} from "./redux-toolkit/toolkitSlice";
 import Cards from "./components/Cards/Cards";
 import Timer from "./components/Timer/Timer";
 import Menu from "./components/Menu/Menu";
+import classNames from "classnames";
 
 function App() {
-    const {gameOn, removedItemIds} = useSelector(state => state.toolkit)
-    const dispatch = useDispatch()
-
-    // const StartButton = () => {
-    //     if (!gameOn && removedItemIds.length === 0) {
-    //
-    //         return <button
-    //                        onClick={
-    //                            () => dispatch(start())
-    //                        }>
-    //             Начать игру
-    //         </button>
-    //     }
-    // }
-    //
-    // const SizeButton = () => {
-    //     if (!gameOn && removedItemIds.length === 0) {
-    //         return <button
-    //             // className={s.gameSize}
-    //                        // onClick={dispatch(changeGameSizeMode())}
-    //         >
-    //             Настройки
-    //         </button>
-    //     }
-    // }
+    const {gameOn} = useSelector(state => state.toolkit)
 
     const Game = () => {
         if (gameOn) {
             return (
-                <div className={s.cardsContainer}>
                     <Cards/>
-                </div>
             )
         }
     }
 
     return (
         <div className='body'>
-            <Timer />
-            <Game />
-            <Menu />
-
-            {/*<div className={s.menu}>*/}
-            {/*   */}
-            {/*    <StartButton/>*/}
-            {/*    <SizeButton />*/}
-
-            {/*</div>*/}
+            <Timer/>
+            <Game/>
+            <Menu/>
 
             <div className={b.light + " " + b.x1}></div>
             <div className={b.light + " " + b.x2}></div>

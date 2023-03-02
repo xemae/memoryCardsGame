@@ -2,6 +2,8 @@ import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import Card from "./Card/Card";
 import {hideCard} from "../../redux-toolkit/toolkitSlice";
+import classNames from "classnames";
+import s from "./Cards.module.css";
 
 const timeOutSingle = 5000
 const timeOutFail = 1000
@@ -35,7 +37,19 @@ const Cards = () => {
     }, [showedItemsIds])
 
 
-    return cards.map(card => <Card card={card} key={card.id}/>)
+    const Cards = cards.map(card => <Card card={card} key={card.id}/>)
+
+    return (
+        <div
+            className={classNames(
+                s.cardsContainer,
+                {[s.six]: true},
+                {[s.four]: false},
+            )}
+        >
+            {Cards}
+        </div>
+    )
 }
 
 export default Cards

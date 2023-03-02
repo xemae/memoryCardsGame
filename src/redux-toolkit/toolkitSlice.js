@@ -23,6 +23,7 @@ const toolkitSlice = createSlice({
     name: 'toolkit',
     initialState: {
         gameOn: false,
+        gameSize: null,
         attempts: 0,
         successfulAttempts: 0,
         showedItemsIds: [],
@@ -38,86 +39,86 @@ const toolkitSlice = createSlice({
                 pairId: 2,
                 image: img2,
             },
-            // {
-            //     id: 3,
-            //     pairId: 3,
-            //     image: img3,
-            // },
-            // {
-            //     id: 4,
-            //     pairId: 4,
-            //     image: img4,
-            // },
-            // {
-            //     id: 5,
-            //     pairId: 5,
-            //     image: img5,
-            // },
-            // {
-            //     id: 6,
-            //     pairId: 6,
-            //     image: img6,
-            // },
-            // {
-            //     id: 7,
-            //     pairId: 7,
-            //     image: img7,
-            // },
-            // {
-            //     id: 8,
-            //     pairId: 8,
-            //     image: img8,
-            // },
-            // {
-            //     id: 9,
-            //     pairId: 9,
-            //     image: img9,
-            // },
-            // {
-            //     id: 10,
-            //     pairId: 10,
-            //     image: img10,
-            // },
-            // {
-            //     id: 11,
-            //     pairId: 11,
-            //     image: img11,
-            // },
-            // {
-            //     id: 12,
-            //     pairId: 12,
-            //     image: img12,
-            // },
-            // {
-            //     id: 13,
-            //     pairId: 13,
-            //     image: img13,
-            // },
-            // {
-            //     id: 14,
-            //     pairId: 14,
-            //     image: img14,
-            // },
-            // {
-            //     id: 15,
-            //     pairId: 15,
-            //     image: img15,
-            // },
-            // {
-            //     id: 16,
-            //     pairId: 16,
-            //     image: img16,
-            // },
-            // {
-            //     id: 17,
-            //     pairId: 17,
-            //     image: img17,
-            // },
-            // {
-            //     id: 18,
-            //     pairId: 18,
-            //     image: img18,
-            // },
+            {
+                id: 3,
+                pairId: 3,
+                image: img3,
+            },
+            {
+                id: 4,
+                pairId: 4,
+                image: img4,
+            },
+            {
+                id: 5,
+                pairId: 5,
+                image: img5,
+            },
+            {
+                id: 6,
+                pairId: 6,
+                image: img6,
+            },
+            {
+                id: 7,
+                pairId: 7,
+                image: img7,
+            },
+            {
+                id: 8,
+                pairId: 8,
+                image: img8,
+            },
+            {
+                id: 9,
+                pairId: 9,
+                image: img9,
+            },
+            {
+                id: 10,
+                pairId: 10,
+                image: img10,
+            },
+            {
+                id: 11,
+                pairId: 11,
+                image: img11,
+            },
+            {
+                id: 12,
+                pairId: 12,
+                image: img12,
+            },
+            {
+                id: 13,
+                pairId: 13,
+                image: img13,
+            },
+            {
+                id: 14,
+                pairId: 14,
+                image: img14,
+            },
+            {
+                id: 15,
+                pairId: 15,
+                image: img15,
+            },
+            {
+                id: 16,
+                pairId: 16,
+                image: img16,
+            },
+            {
+                id: 17,
+                pairId: 17,
+                image: img17,
+            },
+            {
+                id: 18,
+                pairId: 18,
+                image: img18,
+            },
             {
                 id: 19,
                 pairId: 1,
@@ -128,86 +129,86 @@ const toolkitSlice = createSlice({
                 pairId: 2,
                 image: img2,
             },
-            // {
-            //     id: 21,
-            //     pairId: 3,
-            //     image: img3,
-            // },
-            // {
-            //     id: 22,
-            //     pairId: 4,
-            //     image: img4,
-            // },
-            // {
-            //     id: 23,
-            //     pairId: 5,
-            //     image: img5,
-            // },
-            // {
-            //     id: 24,
-            //     pairId: 6,
-            //     image: img6,
-            // },
-            // {
-            //     id: 25,
-            //     pairId: 7,
-            //     image: img7,
-            // },
-            // {
-            //     id: 26,
-            //     pairId: 8,
-            //     image: img8,
-            // },
-            // {
-            //     id: 27,
-            //     pairId: 9,
-            //     image: img9,
-            // },
-            // {
-            //     id: 28,
-            //     pairId: 10,
-            //     image: img10,
-            // },
-            // {
-            //     id: 29,
-            //     pairId: 11,
-            //     image: img11,
-            // },
-            // {
-            //     id: 30,
-            //     pairId: 12,
-            //     image: img12,
-            // },
-            // {
-            //     id: 31,
-            //     pairId: 13,
-            //     image: img13,
-            // },
-            // {
-            //     id: 32,
-            //     pairId: 14,
-            //     image: img14,
-            // },
-            // {
-            //     id: 33,
-            //     pairId: 15,
-            //     image: img15,
-            // },
-            // {
-            //     id: 34,
-            //     pairId: 16,
-            //     image: img16,
-            // },
-            // {
-            //     id: 35,
-            //     pairId: 17,
-            //     image: img17,
-            // },
-            // {
-            //     id: 36,
-            //     pairId: 18,
-            //     image: img18,
-            // },
+            {
+                id: 21,
+                pairId: 3,
+                image: img3,
+            },
+            {
+                id: 22,
+                pairId: 4,
+                image: img4,
+            },
+            {
+                id: 23,
+                pairId: 5,
+                image: img5,
+            },
+            {
+                id: 24,
+                pairId: 6,
+                image: img6,
+            },
+            {
+                id: 25,
+                pairId: 7,
+                image: img7,
+            },
+            {
+                id: 26,
+                pairId: 8,
+                image: img8,
+            },
+            {
+                id: 27,
+                pairId: 9,
+                image: img9,
+            },
+            {
+                id: 28,
+                pairId: 10,
+                image: img10,
+            },
+            {
+                id: 29,
+                pairId: 11,
+                image: img11,
+            },
+            {
+                id: 30,
+                pairId: 12,
+                image: img12,
+            },
+            {
+                id: 31,
+                pairId: 13,
+                image: img13,
+            },
+            {
+                id: 32,
+                pairId: 14,
+                image: img14,
+            },
+            {
+                id: 33,
+                pairId: 15,
+                image: img15,
+            },
+            {
+                id: 34,
+                pairId: 16,
+                image: img16,
+            },
+            {
+                id: 35,
+                pairId: 17,
+                image: img17,
+            },
+            {
+                id: 36,
+                pairId: 18,
+                image: img18,
+            },
         ],
     },
     reducers: {
@@ -245,6 +246,9 @@ const toolkitSlice = createSlice({
         },
         setMenu(state) {
             state.removedItemIds = []
+        },
+        SetSize(state, action) {
+            // state.removedItemIds = []
         }
 
     },
