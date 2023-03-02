@@ -236,16 +236,20 @@ const toolkitSlice = createSlice({
 
             if (state.cards.length === state.removedItemIds.length) {
                 state.gameOn = false
+                // state.removedItemIds = []
             }
 
             state.showedItemsIds = []
 
             console.log(state.gameOn)
         },
+        setMenu(state) {
+            state.removedItemIds = []
+        }
 
     },
 })
 
 export default toolkitSlice.reducer
 
-export const {start, showCard, hideCard} = toolkitSlice.actions
+export const {start, showCard, hideCard, setMenu} = toolkitSlice.actions
