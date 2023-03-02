@@ -230,15 +230,17 @@ const toolkitSlice = createSlice({
                     }
                 }
             }
+        },
+        hideCard(state) {
+            state.attempts = state.attempts + 1
+
             if (state.cards.length === state.removedItemIds.length) {
                 state.gameOn = false
             }
-            console.log('removedItemIds ' + state.removedItemIds.length)
 
-        },
-        hideCard(state) {
             state.showedItemsIds = []
-            state.attempts = state.attempts + 1
+
+            console.log(state.gameOn)
         },
 
     },
