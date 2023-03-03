@@ -4,11 +4,11 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
 }
 
 .menu h1 {
     font-size: 50px;
+    margin-top: 110px;
 }
 
 button {
@@ -88,16 +88,12 @@ h3 {
     height: 23px;
     background: radial-gradient(at center, #6af3c2, #38c0ac);
     cursor: pointer;
-    /*box-shadow: 0 0 16px 0 rgba(14, 87, 75, 0.63);*/
     box-shadow: 0 0 13px 0 rgba(178, 255, 242, 0.63);
-
 }
 
 .gameSizeSlider::-webkit-slider-thumb:hover {
     background: radial-gradient(at center, #76ffcf, #38c0ac);
     box-shadow: 0 0 18px 0 rgba(178, 255, 242, 0.63);
-
-
 }
 
 .gameSizeSlider::-moz-range-thumb {

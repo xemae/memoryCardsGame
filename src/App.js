@@ -1,13 +1,10 @@
-import React, {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import './App.css';
+import React from "react";
+import {useSelector} from "react-redux";
 import s from './app.module.css'
 import b from './background.module.css'
-import {start} from "./redux-toolkit/toolkitSlice";
 import Cards from "./components/Cards/Cards";
 import Timer from "./components/Timer/Timer";
 import Menu from "./components/Menu/Menu";
-import classNames from "classnames";
 
 function App() {
     const {gameOn} = useSelector(state => state.toolkit)
@@ -15,7 +12,7 @@ function App() {
     const Game = () => {
         if (gameOn) {
             return (
-                    <Cards/>
+                <Cards/>
             )
         }
     }
@@ -25,7 +22,6 @@ function App() {
             <Timer/>
             <Game/>
             <Menu/>
-
             <div className={b.light + " " + b.x1}></div>
             <div className={b.light + " " + b.x2}></div>
             <div className={b.light + " " + b.x3}></div>

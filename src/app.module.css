@@ -2,35 +2,3 @@
     z-index: 1000;
 }
 
-/*!*.cardsContainer {*!*/
-/*!*    display: grid;*!*/
-/*!*    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;*!*/
-/*!*    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;*!*/
-/*!*    grid-gap: 3px;*!*/
-/*!*    border: white 2px solid;*!*/
-/*!*    width: 600px;*!*/
-/*!*    height: 600px;*!*/
-/*!*    padding: 20px;*!*/
-/*!*    position: relative;*!*/
-/*!*    margin: auto;*!*/
-/*!*}*!*/
-
-/*.cardsContainer {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    justify-content: space-between;*/
-/*    padding: 20px;*/
-/*    position: relative;*/
-/*    margin: auto;*/
-/*    border: white 2px solid;*/
-/*}*/
-
-/*.cardsContainer.six {*/
-/*    width: 588px;*/
-/*    height: 588px;*/
-/*}*/
-
-/*.cardsContainer.four {*/
-/*    width: 392px;*/
-/*    height: 392px;*/
-/*}*/

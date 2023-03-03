@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import s from './Win.module.css'
 import Menu from "../Menu/Menu";
@@ -17,7 +17,7 @@ const Win = (props) => {
         return <Menu/>
     }
 
-    if (removedItemIds.length === cards.length) {
+    if (removedItemIds.length === cards?.length) {
         return (
             <div className={s.winCover}>
                 <h1>Результаты</h1>
