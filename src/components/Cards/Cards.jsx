@@ -45,8 +45,9 @@ const Cards = () => {
     }
 
     return (
-        <div>
 
+        <div>
+            {/*<div className={s.cardsCover}></div>*/}
             <div
                 className={classNames(
                     s.cardsContainer,

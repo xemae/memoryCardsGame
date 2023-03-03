@@ -21,7 +21,8 @@ const Card = (props) => {
     }, [isShowed, isRemoved, card])
 
     return (
-        <div
+        <div>
+            <div
             className={classNames(
                 s.card,
                 {[s.default]: !isShowed && !isRemoved},
@@ -40,6 +41,7 @@ const Card = (props) => {
                     {[s.none]: !isShowed || isRemoved},
                 )}
             />
+        </div>
         </div>
     )
 }
