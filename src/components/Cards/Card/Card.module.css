@@ -24,6 +24,31 @@
     outline: 1px solid transparent;
 }
 
+.card.six {
+    width: 103px;
+    height: 103px;
+}
+
+.card.five {
+    width: 114px;
+    height: 114px;
+}
+
+.card.four {
+    width: 132px;
+    height: 132px;
+}
+
+.card.three {
+    width: 146px;
+    height: 146px;
+}
+
+.card.two {
+    width: 171px;
+    height: 171px;
+}
+
 .card.default {
     background-color: #f3f3f3;
     outline: 1px solid #c4c4c4;

@@ -3,12 +3,11 @@ import s from "./Card.module.css";
 import React, {useCallback, useMemo} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import classNames from "classnames";
-import Win from "../../Win/Win";
 
 const Card = (props) => {
     const {card} = props
     const dispatch = useDispatch()
-    const {showedItemsIds, removedItemIds, cards} = useSelector(state => state.toolkit)
+    const {showedItemsIds, removedItemIds, gameSize} = useSelector(state => state.toolkit)
 
     const isShowed = useMemo(() =>
         Boolean(showedItemsIds.find(item => item.id === card.id)), [showedItemsIds, card])
@@ -25,7 +24,12 @@ const Card = (props) => {
         <div
             className={classNames(
                 s.card,
-                {[s.default]: !isShowed && !isRemoved}
+                {[s.default]: !isShowed && !isRemoved},
+            {[s.six]:  gameSize == 6},
+            {[s.five]: gameSize == 5},
+            {[s.four]: gameSize == 4},
+            {[s.three]: gameSize == 3},
+            {[s.two]: gameSize == 2},
             )}
             onClick={cardClick}
         >
@@ -33,7 +37,7 @@ const Card = (props) => {
                 src={card.image}
                 className={classNames(
                     s.image,
-                    {[s.none]: !isShowed || isRemoved}
+                    {[s.none]: !isShowed || isRemoved},
                 )}
             />
         </div>

@@ -1,15 +1,15 @@
 import React, {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {setMenu, start} from "../../redux-toolkit/toolkitSlice";
+import {setGameSize, start} from "../../redux-toolkit/toolkitSlice";
 import s from './Menu.module.css'
 
 const Menu = () => {
-    const {gameOn, removedItemIds} = useSelector(state => state.toolkit)
+    const {gameOn, removedItemIds, gameSize} = useSelector(state => state.toolkit)
     const dispatch = useDispatch()
 
     const [sizeMode, setSizeMode] = useState(false)
     const [showRules, setShowRules] = useState(false)
-    const [gameSize, setGameSize] = useState(4)
+    // const [gameSize, setGameSize] = useState(4)
 
 
     const StartButton = () => {
@@ -39,11 +39,9 @@ const Menu = () => {
     }
 
     if (sizeMode) {
-
         const changeGameSizeHandler = (e) => {
-            const size = e.target.value;
-            setGameSize(size);
-            //console.log("price " + numbers);
+            const size = +e.target.value;
+            dispatch(setGameSize(size));
         }
 
         return (
@@ -54,20 +52,20 @@ const Menu = () => {
                     <h2>{'Размер поля: ' + gameSize + 'x' + gameSize}</h2>
                     <div>
                         <input
-                            className={s.gameSizeSlider} type="range" min="2" max="6" step="1" value={gameSize}
+                            className={s.gameSizeSlider} type="range" min="2" max="6" step="2" value={gameSize}
                             onChange={(e) => changeGameSizeHandler(e)}
                         />
                     </div>
                 </div>
 
                 <button onClick={() => setSizeMode(false)}>Меню</button>
-
             </div>
         )
     }
 
     if (showRules) {
         return <div className={s.menu}>
+
             <h1>Мемные коты</h1>
             <h3>
                 Перед вами таблица из клеток. В каждой из них спрятан мем с котом. За один ход вы можете раскрыть два
@@ -82,7 +80,6 @@ const Menu = () => {
 
             <button onClick={() => setShowRules(false)}>Меню</button>
 
-
         </div>
     }
 
@@ -96,7 +93,6 @@ const Menu = () => {
             </div>
         )
     }
-
 
 }
 
