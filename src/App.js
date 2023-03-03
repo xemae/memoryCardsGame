@@ -18,7 +18,7 @@ function App() {
     }
 
     return (
-        <div className='body'>
+        <div className={s.body}>
             <Timer/>
             <Game/>
             <Menu/>

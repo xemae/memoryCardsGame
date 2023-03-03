@@ -1,11 +1,29 @@
+/*.cardsCover {*/
+/*    position: absolute;*/
+/*    z-index: 2;*/
+/*    opacity: 0.99;*/
+
+/*    top: 50px;*/
+/*    left: 0;*/
+/*    bottom: 0;*/
+/*    right: 0;*/
+/*}*/
+
 .cardsContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 20px;
-    position: relative;
+    /*position: relative;*/
     margin: auto;
     border: white 2px solid;
+    z-index: 3;
+    opacity: 1;
+
+
+
+    box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgba(0, 0, 0, 0.24);
+
 }
 
 .cardsContainer.six {
@@ -38,4 +56,9 @@
     margin: 20px auto 10px auto;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    bottom: 0;
+    right: 0;
 }
