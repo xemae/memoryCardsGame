@@ -46,6 +46,8 @@ const toolkitSlice = createSlice({
         setMenu(state) {
             state.removedItemIds = []
             state.gameOn = false
+            state.attempts = 0
+
             // state.gameTime = 0
         },
         setGameSize(state, action) {

@@ -5,8 +5,8 @@ import {getStringTimeBySeconds} from "../../lib";
 import Win from "../Win/Win";
 
 const Timer = () => {
-    const {gameOn, gameTime} = useSelector(state => state.toolkit)
-    const [timeCount, setTimeCount] = useState(gameTime)
+    const {gameOn, attempts} = useSelector(state => state.toolkit)
+    const [timeCount, setTimeCount] = useState(0)
     const [timeOutId, setTimeOutId] = useState(0)
 
 
@@ -25,6 +25,13 @@ const Timer = () => {
             }
         }, [gameOn]
     )
+
+    useEffect (() => {
+        if (!gameOn && attempts === 0) {
+            setTimeCount(0)
+        }
+    }, [gameOn, attempts])
+
 
     if (!gameOn) {
         return (

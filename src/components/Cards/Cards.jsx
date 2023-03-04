@@ -42,7 +42,6 @@ const Cards = () => {
 
     const onMenuClick = () => {
         dispatch(setMenu())
-        return <Menu/>
     }
 
     return (
