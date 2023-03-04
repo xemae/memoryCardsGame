@@ -10,11 +10,13 @@ const toolkitSlice = createSlice({
         successfulAttempts: 0,
         showedItemsIds: [],
         removedItemIds: [],
+        // gameTime: 0,
         cards: null
     },
     reducers: {
         start(state) {
             state.attempts = 0
+            // state.gameTime = 0
             state.successfulAttempts = 0
             state.removedItemIds.length = 0
             state.showedItemsIds.length = 0
@@ -39,14 +41,16 @@ const toolkitSlice = createSlice({
                 state.gameOn = false
             }
             state.showedItemsIds = []
+            // console.log(state.gameTime)
         },
         setMenu(state) {
             state.removedItemIds = []
             state.gameOn = false
+            // state.gameTime = 0
         },
         setGameSize(state, action) {
             state.gameSize = action.payload
-        }
+        },
     },
 })
 

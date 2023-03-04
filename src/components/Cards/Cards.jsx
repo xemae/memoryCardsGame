@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import Card from "./Card/Card";
 import {hideCard, setMenu} from "../../redux-toolkit/toolkitSlice";
@@ -13,6 +13,7 @@ const timeOutSuccess = 200
 const Cards = () => {
     const dispatch = useDispatch()
     const {cards, showedItemsIds, gameSize} = useSelector(state => state.toolkit)
+
 
     useEffect(() => {
         if (showedItemsIds.length > 0) {
@@ -47,7 +48,6 @@ const Cards = () => {
     return (
 
         <div>
-            {/*<div className={s.cardsCover}></div>*/}
             <div
                 className={classNames(
                     s.cardsContainer,

@@ -5,13 +5,14 @@ import {getStringTimeBySeconds} from "../../lib";
 import Win from "../Win/Win";
 
 const Timer = () => {
-    const {gameOn} = useSelector(state => state.toolkit)
-    const [timeCount, setTimeCount] = useState(0)
+    const {gameOn, gameTime} = useSelector(state => state.toolkit)
+    const [timeCount, setTimeCount] = useState(gameTime)
     const [timeOutId, setTimeOutId] = useState(0)
+
 
     useEffect(
         () => {
-            if (gameOn === true) {
+            if (gameOn) {
                 const timeId = setInterval(
                     () => {
                         setTimeCount(prevTimeCount => prevTimeCount + 1)
