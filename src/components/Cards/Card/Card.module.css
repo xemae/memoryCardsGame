@@ -1,5 +1,3 @@
-
-
 .card {
     width: 95px;
     height: 95px;
@@ -9,27 +7,8 @@
     outline-offset: -4px;
     background-color: transparent;
     outline: 1px solid transparent;
+    position: relative;
 }
-
-
-
-/*.cardCover {*/
-/*    !*background-color: #f3f3f3;*!*/
-/*    !*transition: all 0.2s;*!*/
-/*    !*outline: 1px solid #c4c4c4;*!*/
-/*    !*outline-offset: -4px;*!*/
-/*    line-height: 50px;*/
-/*    height: 50px;*/
-/*    text-align: center;*/
-/*    width: 250px;*/
-/*    cursor: pointer;*/
-
-/*    color: #FFF;*/
-/*    transition: all 0.5s;*/
-/*    position: relative;*/
-/*}*/
-
-
 
 .card.six {
     width: 103px;
@@ -65,7 +44,6 @@
     text-align: center;
     transition: all 0.5s;
     position: relative;
-
 }
 
 .card.default::before {
@@ -112,15 +90,7 @@
 .image {
     width: 100%;
     height: 100%;
-
-    /*z-index: 2;*/
-    /*position: absolute;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*bottom: 0;*/
-
-
+position: relative;
     transition: opacity .2s;
 }
 

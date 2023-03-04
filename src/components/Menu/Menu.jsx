@@ -9,8 +9,6 @@ const Menu = () => {
 
     const [sizeMode, setSizeMode] = useState(false)
     const [showRules, setShowRules] = useState(false)
-    // const [gameSize, setGameSize] = useState(4)
-
 
     const StartButton = () => {
         return <button
