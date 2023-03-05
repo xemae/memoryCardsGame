@@ -146,6 +146,7 @@ h3 {
     }
 
     .gameSizeSlider::-webkit-slider-thumb {
+        border-radius: 100%;
         outline-offset: -2px;
         width: 33px;
         height: 33px;
@@ -159,6 +160,7 @@ h3 {
 
 @media (pointer: coarse) {
     .gameSizeSlider::-webkit-slider-thumb:hover {
+        border-radius: 100%;
         width: 35px;
         height: 35px;
     }
