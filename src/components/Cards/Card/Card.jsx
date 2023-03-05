@@ -25,6 +25,7 @@ const Card = (props) => {
             <div
             className={classNames(
                 s.card,
+                // {[s.default]: !isShowed && !isRemoved},
                 {[s.default]: !isShowed && !isRemoved},
             {[s.six]:  gameSize == 6},
             {[s.five]: gameSize == 5},
@@ -34,6 +35,7 @@ const Card = (props) => {
             )}
             onClick={cardClick}
         >
+               <span></span>
             <img
                 src={card.image}
                 className={classNames(

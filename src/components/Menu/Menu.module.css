@@ -16,7 +16,7 @@ button {
     border-radius: 8px;
     color: white;
     transition: all 0.3s;
-    background-color: rgba(59, 63, 63, 0.42);
+    background-color: rgba(126, 126, 126, 0.42);
     width: 250px;
     height: 50px;
     opacity: .5;
@@ -25,9 +25,9 @@ button {
 }
 
 button:hover {
-    border: #3b3f3f 2px solid;
-    background-color: rgba(255, 255, 255, 0.27);
-    color: #3b3f3f;
+    border: #282c2c 2px solid;
+    background-color: rgba(255, 255, 255, 0.42);
+    color: #2c2f2f;
     opacity: .8;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
@@ -86,13 +86,13 @@ h3 {
     outline-offset: -2px;
     width: 23px;
     height: 23px;
-    background: radial-gradient(at center, #6af3c2, #38c0ac);
+    background: radial-gradient(at center, #abffe1, #38a7c0);
     cursor: pointer;
     box-shadow: 0 0 13px 0 rgba(178, 255, 242, 0.63);
 }
 
 .gameSizeSlider::-webkit-slider-thumb:hover {
-    background: radial-gradient(at center, #76ffcf, #38c0ac);
+    background: radial-gradient(at center, #a2ffde, #38c0ac);
     box-shadow: 0 0 18px 0 rgba(178, 255, 242, 0.63);
 }
 
