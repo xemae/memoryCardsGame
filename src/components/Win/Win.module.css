@@ -20,3 +20,9 @@
     font-weight: normal;
     text-align: left;
 }
+
+@media (max-width: 660px) {
+    .winCover button {
+        margin-top: 50px;
+    }
+}

@@ -12,17 +12,17 @@
 
 .cardsContainer.six {
     width: 650px;
-    /*height: 650px;*/
+    height: 650px;
 }
 
 .cardsContainer.four {
     width: 550px;
-    /*height: 550px;*/
+    height: 550px;
 }
 
 .cardsContainer.two {
     width: 350px;
-    /*height: 350px;*/
+    height: 350px;
 }
 
 .menuButton {
@@ -34,28 +34,27 @@
     font-weight: normal;
 }
 
-
 @media (max-width: 660px) {
     .cardsContainer {
         padding: 1vw;
     }
 
     .cardsContainer.two {
-        background-color: #4CAF50;
         width: 95vw;
         height: 95vw;;
     }
 
     .cardsContainer.four {
-        background-color: #4CAF50;
         width: 95vw;
         height: 95vw;
     }
 
     .cardsContainer.six {
-        background-color: #4CAF50;
         width: 95vw;
         height: 95vw;
     }
 
+    .menuButton {
+        margin-top: 50px;
+    }
 }
