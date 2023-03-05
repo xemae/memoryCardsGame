@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/memoryCardsGame/static/css/main.a80a035f.css",
+    "main.js": "/memoryCardsGame/static/js/main.3c0a587a.js",
+    "static/js/787.fd383d5a.chunk.js": "/memoryCardsGame/static/js/787.fd383d5a.chunk.js",
+    "static/media/9.webp": "/memoryCardsGame/static/media/9.038b60eb2dc7815d53c3.webp",
+    "static/media/2.webp": "/memoryCardsGame/static/media/2.c1f1d26346b36bf10db2.webp",
+    "static/media/5.png": "/memoryCardsGame/static/media/5.3390b8489d3aceb6b299.png",
+    "static/media/6.jpeg": "/memoryCardsGame/static/media/6.a351894d3d41fbae7eab.jpeg",
+    "static/media/11.webp": "/memoryCardsGame/static/media/11.f09d3ca2aeb3b30fc05b.webp",
+    "static/media/8.webp": "/memoryCardsGame/static/media/8.9855189ec335d75ac327.webp",
+    "static/media/3.jpeg": "/memoryCardsGame/static/media/3.e529879fc0c73957da59.jpeg",
+    "static/media/16.jpeg": "/memoryCardsGame/static/media/16.8391dda3a134b41a94af.jpeg",
+    "static/media/10.webp": "/memoryCardsGame/static/media/10.56315ce8c44a1f192b6a.webp",
+    "static/media/15.webp": "/memoryCardsGame/static/media/15.6bed770a2c6d96ecad77.webp",
+    "static/media/7.jpeg": "/memoryCardsGame/static/media/7.3b79054fe10addc8ce9e.jpeg",
+    "static/media/1.webp": "/memoryCardsGame/static/media/1.daab151bab1e8654cf57.webp",
+    "static/media/14.jpeg": "/memoryCardsGame/static/media/14.22c476a6cd521141fd14.jpeg",
+    "static/media/13.webp": "/memoryCardsGame/static/media/13.5aa5416d180c0d51543f.webp",
+    "static/media/18.webp": "/memoryCardsGame/static/media/18.53ee1986bfdb1a55806b.webp",
+    "static/media/12.webp": "/memoryCardsGame/static/media/12.5d89bb752854d2b5380c.webp",
+    "static/media/17.webp": "/memoryCardsGame/static/media/17.d0108ace884a0466271c.webp",
+    "index.html": "/memoryCardsGame/index.html",
+    "main.a80a035f.css.map": "/memoryCardsGame/static/css/main.a80a035f.css.map",
+    "main.3c0a587a.js.map": "/memoryCardsGame/static/js/main.3c0a587a.js.map",
+    "787.fd383d5a.chunk.js.map": "/memoryCardsGame/static/js/787.fd383d5a.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a80a035f.css",
+    "static/js/main.3c0a587a.js"
+  ]
+}
