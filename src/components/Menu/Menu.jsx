@@ -62,7 +62,7 @@ const Menu = () => {
     }
 
     if (showRules) {
-        return <div className={s.menu}>
+        return <div className={s.rules + ' ' + s.menu}>
             <h1>Мемные коты</h1>
             <h3>
                 Перед вами таблица из клеток. В каждой из них спрятан мем с котом. За один ход вы можете раскрыть два

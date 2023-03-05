@@ -192,32 +192,26 @@
 }
 
 @media (max-width: 660px) {
-
     .cardsContainer {
-        width: 98vw;
-        height: 98vw;
+        width: 95vw;
+        height: 95vw;
     }
 
-
     .card.six {
-        width: 15.8vw;
-        height: 15.8vw;
+        width: 15vw;
+        height: 15vw;
         margin: 0.4vw;
-
     }
 
     .card.four {
-        width: 23.5vw;
-        height: 23.5vw;
+        width: 22.5vw;
+        height: 22.5vw;
         margin: 0.5vw;
-
-
     }
 
     .card.two {
-        width: 43vw;
-        height: 43vw;
+        width: 45.5vw;
+        height: 45.5vw;
         margin: 0.8vw;
-
     }
 }
