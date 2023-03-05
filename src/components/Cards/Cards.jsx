@@ -1,14 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import Card from "./Card/Card";
 import {hideCard, setMenu} from "../../redux-toolkit/toolkitSlice";
 import classNames from "classnames";
 import s from "./Cards.module.css";
-import Menu from "../Menu/Menu";
 
 const timeOutSingle = 5000
-const timeOutFail = 1000
-const timeOutSuccess = 200
+const timeOutFail = 500
+const timeOutSuccess = 250
 
 const Cards = () => {
     const dispatch = useDispatch()
@@ -45,7 +44,6 @@ const Cards = () => {
     }
 
     return (
-
         <div>
             <div
                 className={classNames(

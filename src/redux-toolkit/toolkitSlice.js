@@ -1,5 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {getCards} from "./cardBase";
+import {useEffect} from "react";
 
 const toolkitSlice = createSlice({
     name: 'toolkit',
@@ -26,22 +27,22 @@ const toolkitSlice = createSlice({
         showCard(state, action) {
             if (state.showedItemsIds.length < 2) {
                 state.showedItemsIds.push(action.payload)
-                if (state.showedItemsIds.length === 2) {
-                    if (state.showedItemsIds[0].pairId === state.showedItemsIds[1].pairId) {
-                        state.removedItemIds.push(state.showedItemsIds[0].id)
-                        state.removedItemIds.push(state.showedItemsIds[1].id)
-                        state.successfulAttempts = state.successfulAttempts + 1
-                    }
-                }
+
             }
         },
         hideCard(state) {
+            if (state.showedItemsIds.length === 2) {
+                if (state.showedItemsIds[0].pairId === state.showedItemsIds[1].pairId) {
+                    state.removedItemIds.push(state.showedItemsIds[0].id)
+                    state.removedItemIds.push(state.showedItemsIds[1].id)
+                    state.successfulAttempts = state.successfulAttempts + 1
+                }
+            }
             state.attempts = state.attempts + 1
             if (state.cards.length === state.removedItemIds.length) {
                 state.gameOn = false
             }
             state.showedItemsIds = []
-            // console.log(state.gameTime)
         },
         setMenu(state) {
             state.removedItemIds = []
