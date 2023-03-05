@@ -1,7 +1,6 @@
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import s from './Win.module.css'
-import Menu from "../Menu/Menu";
 import {setMenu} from "../../redux-toolkit/toolkitSlice";
 
 const Win = (props) => {
@@ -14,8 +13,6 @@ const Win = (props) => {
 
     const onMenuClick = () => {
         dispatch(setMenu())
-        // props.setTimeCount(0)
-        // return <Menu/>
     }
 
     if (removedItemIds.length === cards?.length) {
@@ -31,7 +28,6 @@ const Win = (props) => {
                 </div>
 
                 <button onClick={onMenuClick}>Меню</button>
-
             </div>
         )
     }

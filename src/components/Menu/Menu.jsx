@@ -63,7 +63,6 @@ const Menu = () => {
 
     if (showRules) {
         return <div className={s.menu}>
-
             <h1>Мемные коты</h1>
             <h3>
                 Перед вами таблица из клеток. В каждой из них спрятан мем с котом. За один ход вы можете раскрыть два
@@ -75,9 +74,7 @@ const Menu = () => {
                 клетке,
                 тем быстрее вы справитесь с задачей.
             </h3>
-
             <button onClick={() => setShowRules(false)}>Меню</button>
-
         </div>
     }
 
