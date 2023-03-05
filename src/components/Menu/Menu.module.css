@@ -4,14 +4,18 @@
     flex-flow: column wrap;
     align-items: center;
     justify-content: center;
-    max-width: 90vw;
+    max-width: 97vw;
     margin: auto;
-
 }
 
 .menu h1 {
     font-size: 50px;
     margin-top: 110px;
+    max-width: 97vw;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 
 }
 
@@ -26,6 +30,8 @@ button {
     opacity: .5;
     margin: 20px auto 0;
     font-size: 33px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
 }
 
 button:hover {
@@ -52,9 +58,10 @@ button:hover {
 
 h2 {
     font-size: 20px;
-    max-width: 90vw;
+    max-width: 97vw;
     margin: auto;
-
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
 }
 
 h3 {
@@ -64,16 +71,26 @@ h3 {
     display: flex;
     max-width: 90vw;
     margin: auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+
+
 
 }
 
 .gameSize {
     margin-top: 0;
+
 }
 
 .gameSize h2 {
     font-size: 30px;
-    width: 300px;
+    margin-bottom: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
 }
 
 .gameSizeSlider {
@@ -87,6 +104,8 @@ h3 {
     -webkit-transition: .2s;
     transition: opacity .2s;
     margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .gameSizeSlider::-webkit-slider-thumb {
@@ -112,4 +131,31 @@ h3 {
     height: 25px;
     background: #4CAF50;
     cursor: pointer;
+}
+
+
+@media (max-width: 660px) {
+    .gameSizeSlider {
+        width: 55vw;
+        background: #ffffff;
+        margin: 30px auto;
+    }
+
+    .gameSizeSlider::-webkit-slider-thumb {
+        outline-offset: -2px;
+        width: 33px;
+        height: 33px;
+    }
+
+    .gameSizeSlider::-moz-range-thumb {
+        width: 33px;
+        height: 33px;
+    }
+}
+
+@media (pointer: coarse) {
+    .gameSizeSlider::-webkit-slider-thumb:hover {
+        width: 35px;
+        height: 35px;
+    }
 }

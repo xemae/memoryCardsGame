@@ -30,6 +30,8 @@
     margin: 20px auto 10px auto;
     justify-content: center;
     align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
 }
 
 
@@ -38,9 +40,22 @@
         padding: 1vw;
     }
 
-    .cardsContainer.four, .two, .six {
+    .cardsContainer.two {
         background-color: #4CAF50;
-        width: 99vw;
-        /*height: 99vw;*/
+        width: 95vw;
+        height: 95vw;;
     }
+
+    .cardsContainer.four {
+        background-color: #4CAF50;
+        width: 95vw;
+        height: 95vw;
+    }
+
+    .cardsContainer.six {
+        background-color: #4CAF50;
+        width: 95vw;
+        height: 95vw;
+    }
+
 }
