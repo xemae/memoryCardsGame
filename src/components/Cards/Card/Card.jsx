@@ -21,15 +21,12 @@ const Card = (props) => {
     }, [isShowed, isRemoved, card])
 
     return (
-        <div>
             <div
                 className={classNames(
                     s.card,
                     {[s.default]: !isShowed && !isRemoved},
                     {[s.six]: gameSize == 6},
-                    {[s.five]: gameSize == 5},
                     {[s.four]: gameSize == 4},
-                    {[s.three]: gameSize == 3},
                     {[s.two]: gameSize == 2},
                 )}
                 onClick={cardClick}
@@ -43,7 +40,6 @@ const Card = (props) => {
                     )}
                 />
             </div>
-        </div>
     )
 }
 
