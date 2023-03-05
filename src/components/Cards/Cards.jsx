@@ -36,7 +36,6 @@ const Cards = () => {
         }
     }, [showedItemsIds])
 
-
     const cardItems = cards?.map(card => <Card card={card} key={card.id}/>) || []
 
     const onMenuClick = () => {

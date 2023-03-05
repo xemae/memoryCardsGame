@@ -1,6 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit";
 import {getCards} from "./cardBase";
-import {useEffect} from "react";
 
 const toolkitSlice = createSlice({
     name: 'toolkit',
@@ -11,13 +10,11 @@ const toolkitSlice = createSlice({
         successfulAttempts: 0,
         showedItemsIds: [],
         removedItemIds: [],
-        // gameTime: 0,
         cards: null
     },
     reducers: {
         start(state) {
             state.attempts = 0
-            // state.gameTime = 0
             state.successfulAttempts = 0
             state.removedItemIds.length = 0
             state.showedItemsIds.length = 0
@@ -48,8 +45,6 @@ const toolkitSlice = createSlice({
             state.removedItemIds = []
             state.gameOn = false
             state.attempts = 0
-
-            // state.gameTime = 0
         },
         setGameSize(state, action) {
             state.gameSize = action.payload

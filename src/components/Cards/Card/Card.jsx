@@ -23,27 +23,26 @@ const Card = (props) => {
     return (
         <div>
             <div
-            className={classNames(
-                s.card,
-                // {[s.default]: !isShowed && !isRemoved},
-                {[s.default]: !isShowed && !isRemoved},
-            {[s.six]:  gameSize == 6},
-            {[s.five]: gameSize == 5},
-            {[s.four]: gameSize == 4},
-            {[s.three]: gameSize == 3},
-            {[s.two]: gameSize == 2},
-            )}
-            onClick={cardClick}
-        >
-               <span></span>
-            <img
-                src={card.image}
                 className={classNames(
-                    s.image,
-                    {[s.none]: !isShowed || isRemoved},
+                    s.card,
+                    {[s.default]: !isShowed && !isRemoved},
+                    {[s.six]: gameSize == 6},
+                    {[s.five]: gameSize == 5},
+                    {[s.four]: gameSize == 4},
+                    {[s.three]: gameSize == 3},
+                    {[s.two]: gameSize == 2},
                 )}
-            />
-        </div>
+                onClick={cardClick}
+            >
+                <span></span>
+                <img
+                    src={card.image}
+                    className={classNames(
+                        s.image,
+                        {[s.none]: !isShowed || isRemoved},
+                    )}
+                />
+            </div>
         </div>
     )
 }

@@ -9,7 +9,6 @@ const Timer = () => {
     const [timeCount, setTimeCount] = useState(0)
     const [timeOutId, setTimeOutId] = useState(0)
 
-
     useEffect(
         () => {
             if (gameOn) {
@@ -26,7 +25,7 @@ const Timer = () => {
         }, [gameOn]
     )
 
-    useEffect (() => {
+    useEffect(() => {
         if (!gameOn && attempts === 0) {
             setTimeCount(0)
         }
@@ -45,5 +44,3 @@ const Timer = () => {
 }
 
 export default Timer
-
-
