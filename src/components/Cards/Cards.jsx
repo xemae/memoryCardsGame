@@ -48,9 +48,7 @@ const Cards = () => {
                 className={classNames(
                     s.cardsContainer,
                     {[s.six]: gameSize == 6},
-                    {[s.five]: gameSize == 5},
                     {[s.four]: gameSize == 4},
-                    {[s.three]: gameSize == 3},
                     {[s.two]: gameSize == 2},
                 )}
             >
