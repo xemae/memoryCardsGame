@@ -1,6 +1,4 @@
 .card {
-    width: 95px;
-    height: 95px;
     border-radius: 5px;
     overflow: hidden;
     transition: all 0.2s;
@@ -8,6 +6,11 @@
     background-color: transparent;
     outline: 1px solid transparent;
     position: relative;
+    opacity: 1;
+    z-index: 3;
+    margin: 1px;
+    max-width: 99vh;
+    max-height: 99vh;;
 }
 
 .card.six {
@@ -15,19 +18,9 @@
     height: 103px;
 }
 
-.card.five {
-    width: 114px;
-    height: 114px;
-}
-
 .card.four {
     width: 132px;
     height: 132px;
-}
-
-.card.three {
-    width: 146px;
-    height: 146px;
 }
 
 .card.two {
@@ -38,12 +31,11 @@
 .card.default {
     outline: 2px solid #b2b2b2;
     outline-offset: -4px;
-    font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
-    line-height: 39px;
+    /*line-height: 39px;*/
     padding: 0;
     background-color: #f5f5f5;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
@@ -127,4 +119,105 @@
 
 .image.none {
     opacity: 0;
+}
+
+@media (pointer: coarse) {
+    .card.default:hover {
+        background: #ffffff;
+        box-shadow: 0 0px 15px rgba(255, 255, 255, 0.16);
+    }
+
+    .card.default span {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+
+    .card.default:before,
+    .card.default:after {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        background: rgb(73, 73, 73);
+        transition: all 0.3s ease;
+    }
+
+    .card.default:before {
+        height: 0%;
+        width: 4px;
+    }
+
+    .card.default:after {
+        width: 0%;
+        height: 4px;
+    }
+
+    .card.default:hover:before {
+        height: 100%;
+    }
+
+    .card.default:hover:after {
+        width: 100%;
+    }
+
+    .card.default span:before,
+    .card.default span:after {
+        position: absolute;
+        content: "";
+        right: 0;
+        bottom: 0;
+        background: rgb(73, 73, 73);
+        transition: all 0.3s ease;
+    }
+
+    .card.default span:before {
+        width: 4px;
+        height: 0%;
+    }
+
+    .card.default span:after {
+        width: 0%;
+        height: 4px;
+    }
+
+    .card.default span:hover:before {
+        height: 100%;
+    }
+
+    .card.default span:hover:after {
+        width: 100%;
+    }
+}
+
+@media (max-width: 660px) {
+
+    .cardsContainer {
+        width: 98vw;
+        height: 98vw;
+    }
+
+
+    .card.six {
+        width: 15.8vw;
+        height: 15.8vw;
+        margin: 0.4vw;
+
+    }
+
+    .card.four {
+        width: 23.5vw;
+        height: 23.5vw;
+        margin: 0.5vw;
+
+
+    }
+
+    .card.two {
+        width: 43vw;
+        height: 43vw;
+        margin: 0.8vw;
+
+    }
 }

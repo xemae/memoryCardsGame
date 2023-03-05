@@ -5,35 +5,24 @@
     padding: 20px;
     margin: auto;
     border: white 2px solid;
-    z-index: 3;
-    opacity: 1;
     position: relative;
     box-shadow: 0 14px 28px rgb(0 0 0 / 25%), 0 10px 10px rgba(0, 0, 0, 0.24);
+    max-width: 99.9vw;
 }
 
 .cardsContainer.six {
     width: 650px;
-    height: 650px;
-}
-
-.cardsContainer.five {
-    width: 600px;
-    height: 600px;
+    /*height: 650px;*/
 }
 
 .cardsContainer.four {
     width: 550px;
-    height: 550px;
-}
-
-.cardsContainer.three {
-    width: 450px;
-    height: 450px;
+    /*height: 550px;*/
 }
 
 .cardsContainer.two {
     width: 350px;
-    height: 350px;
+    /*height: 350px;*/
 }
 
 .menuButton {
@@ -41,4 +30,17 @@
     margin: 20px auto 10px auto;
     justify-content: center;
     align-items: center;
+}
+
+
+@media (max-width: 660px) {
+    .cardsContainer {
+        padding: 1vw;
+    }
+
+    .cardsContainer.four, .two, .six {
+        background-color: #4CAF50;
+        width: 99vw;
+        /*height: 99vw;*/
+    }
 }
